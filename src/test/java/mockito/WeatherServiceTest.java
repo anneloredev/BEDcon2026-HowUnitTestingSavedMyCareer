@@ -23,15 +23,15 @@ class WeatherServiceTest {
     @Test
     void getWeather() throws Exception {
         // given
-        when(mockClient.getCurrentTemperature(49.82,6.13))
-                .thenReturn(Optional.of(28.0));
+        when(mockClient.getCurrentTemperature(52.52,13.40))
+                .thenReturn(Optional.of(14.0));
 
         // when
         String jacketRecommendation =
-                weatherService.giveJacketRecommendation(49.82,6.13);
+                weatherService.giveJacketRecommendation(52.52,13.40);
 
         // then
-        assertEquals("You definitely do not need a jacket, stay in the shade!", jacketRecommendation);
+        assertEquals("You need a jacket.", jacketRecommendation);
     }
 
 }
